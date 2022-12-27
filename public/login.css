@@ -26,7 +26,7 @@ body{
     border-radius: 10px;
     /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
     overflow: hidden;
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 .container .forms{
@@ -42,7 +42,7 @@ body{
     width: 50%;
     padding: 30px;
     /* background-color: rgba(255, 255, 255,0.1); */
-    transition: margin-left 0.18s ease;
+    transition: margin-left 0.50s ease;
 }
 
 .container.active .login{
@@ -65,10 +65,11 @@ body{
 }
 .container .form .title{
     position: relative;
-    font-size: 27px;
+    font-size: 30px;
     font-weight: 600;
     text-align: center;
     color: #fff;
+    align-items: center;
 }
 .form .title::before{
     content: '';
@@ -104,6 +105,7 @@ body{
 
 .input-field input:is(:focus, :valid){
     border-bottom-color: #f02152;
+    box-shadow: 0 0 10px #f02152;
 }
 
 .input-field i{
@@ -174,10 +176,13 @@ body{
     cursor: pointer;
     transition: all 0.3s ease;
     border-color: #f02152;
+    box-shadow: #f02152;
 }
 
 .button input:hover{
     background-color:  #f02152;
+    box-shadow: 0 0 10px #f02152;
+    border-color: #f02152;
 }
 
 .form .login-signup{
@@ -187,4 +192,5 @@ body{
 input{
     border-radius: 10px;
     background-color: rgba(255, 255, 255,0.1);
+    color:white;
 }
