@@ -14,7 +14,8 @@
     align-items: center;
     justify-content: center;
     margin-left: 100px;
-    margin-bottom: 50px;
+    margin-top: -30px;
+    margin-bottom: 170px;
 }
 
 .container .forms{
@@ -30,11 +31,11 @@
     width: 50%;
     padding: 30px;
     /* background-color: rgba(255, 255, 255,0.1); */
-    transition: margin-left 0.50s ease;
+    transition: margin-left 0.18s ease;
 }
 
 .container.active .login{
-    /* margin-left: -50%; */
+    margin-left: -50%;
     opacity: 0;
     transition: margin-left 0.18s ease, opacity 0.15s ease;
 }
@@ -53,7 +54,7 @@
 }
 .container .form .title{
     position: relative;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 600;
     text-align: center;
     color: #fff;
@@ -65,7 +66,7 @@
     left: 0;
     bottom: 0;
     height: 3px;
-    width: 60px;
+    width: 50px;
     background-color: #f02152;
     border-radius: 25px;
 }
@@ -86,14 +87,15 @@
     border: none;
     outline: none;
     font-size: 16px;
-    border-bottom: 2px solid rgba(255, 255, 255,0);
+    border-bottom: 2px solid rgba(240, 36, 83,0.5);
     border-top: 2px solid transparent;
     transition: all 0.2s ease;
+    background-color: transparent;
+    color: #fff;
 }
 
 .input-field input:is(:focus, :valid){
     border-bottom-color: #f02152;
-    box-shadow: 0 0 10px #f02152;
 }
 
 .input-field i{
@@ -132,7 +134,8 @@
 
 .checkbox-content input{
     margin-right: 10px;
-    accent-color: #dde1ec;
+    accent-color: #f02152;
+    box-shadow: 0 0 2px #f02152;
 }
 
 .form .text{
@@ -164,21 +167,22 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border-color: #f02152;
-    box-shadow: #f02152;
+    box-shadow: 0 0 3px #f02152;
 }
 
 .button input:hover{
     background-color:  #f02152;
-    box-shadow: 0 0 10px #f02152;
+    box-shadow: 0 0 5px #f02152;
     border-color: #f02152;
+    color: #050e2d;
 }
 
 .form .login-signup{
     margin-top: 30px;
     text-align: center;
 }
-input{
+/* input{
     border-radius: 10px;
     background-color: rgba(255, 255, 255,0.1);
     color:white;
-}
+} */

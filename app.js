@@ -16,5 +16,20 @@ const cookieParser = require('cookie-parser');
 //------------------>pug directory 
 app.set('Views',__dirname+'/views');
 app.set('veiws engin','pug'); 
+//------------------>load_data
+var users=[
+    {}
+]
+//------------------>code
+app.get('/',(req,res)=>{
+    return res.redirect('first.html');
+})
+app.post('/loginAction',(req,res)=>{
+    var email = req.body.email;
+    var pass = req.body.pass;
+    var index = users.findindex((x)=> x.email==email && x.pass==pass);
+    if(index>-1)  res.redirect('/profile.html');
+    
+})
 //------------------>
-app.listen(7070,()=>{console.log('listening...')});
+app.listen(7777,()=>{console.log('listening...')});
