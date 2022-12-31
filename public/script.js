@@ -138,3 +138,13 @@ window.addEventListener('scroll',function(){
         }
     }
 })
+
+function sudoku(){
+    window.location.href = 'sudoku.html';
+
+}
+
+function snake(){
+    window.location.href = 'snake_game.html';
+
+}
