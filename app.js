@@ -18,7 +18,6 @@ app.set('Views',__dirname+'/views');
 app.set('veiws engin','pug'); 
 //--------------------database
 const sql = require('mysql2');
-const express = require("express");
 const argon=require("argon2");
 var con = sql.createConnection({
     host: process.env.host,
@@ -27,12 +26,52 @@ var con = sql.createConnection({
     user:process.env.user,
     password:process.env.password
 });
-//------------------>load_data
 
 //------------------>code
 app.get('/',(req,res)=>{
     return res.redirect('first.html');
 })
+//+++++++++++++++++++++
+app.post('/regAction',(req,res)=>{
+    var name = req.body.name;
+    var email = req.body.email;
+    var pass1 = req.body.pass1;
+    var pass2=req.body.pass2;
+    var accept = req.body.accept;
+    console.log(name);
+    console.log("yarbbb");
+    if(!name.trim() || !pass1.trim() || !pass2.trim() || !accept){
+        return res.redirect('first.html')
+    }
+    if(pass1!=pass2){
+        return res.status(400).send({messge: "passwords are not the same"});
+    }
+    
+    con.query("INSERT INTO player (name,email) VALUES (?,?,?)",
+        async (err,result)=>{
+        if(err){
+            console.log(err);
+            console.log("here");
+            res.status(500).send({message:"Failed to register", data:null});
+            return;
+        }
+       const id = result.insertId;
+       const hashpass = await argon.hash(pass1);
+       const hashpas = await argon.hash(pass2);
+       Pool.query("INSERT INTO auth (username,password) VALUES (?,?)",[name,hashpass], 
+        (err,result2)=>{
+            if(err){
+                console.log(err);
+                res.status(500).send({message:"Failed to register", data:null});
+                console.log("yarbbb");
+                return;
+            }
+            res.status(201).send({message:"Done",data:{id,username}});   
+        });
+       }
+    );
+});
+//++++++++++++++++++++++++
 app.post('/loginAction',(req,res)=>{
     var email = req.body.email;
     var pass = req.body.pass;
@@ -40,5 +79,6 @@ app.post('/loginAction',(req,res)=>{
     if(index>-1)  res.redirect('/profile.html');
     
 })
+
 //------------------>
-app.listen(7777,()=>{console.log('listening...')});
+app.listen(port,()=>{console.log('listening...')});
