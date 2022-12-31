@@ -96,7 +96,6 @@ form2.addEventListener("submit",(e)=>{
         errAccept.innerText = messages;
         e.preventDefault();  
     } 
-    e.preventDefault();
 });
 //------------------------------------------------
 // js code to appear signup and login form
