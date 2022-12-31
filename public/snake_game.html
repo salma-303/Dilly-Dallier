@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>snake game</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snake game</title>
-    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="snake.css">
-    
-</body>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
 </head>
+
 <body>
+
+    <header>
+        <a href="#" class="logo">Dilly-Dallier</a>
+        <ul class="nav">
+            <li><a href="#home" onclick="first()">Home</a></li>
+            <li><a href="#login" onclick="first()">Log in</a></li>
+            <li><a href="#signup" onclick="first()">Sign up</a></li>
+            <li><a href="#games" onclick="first()">Games</a></li>
+            <li><a href="#about" onclick="first()">About</a></li>
+            <li><a href="#contact" onclick="first()">Contact us</a></li>
+        </ul>
+        <div class="action">
+            <div class="searchBx">
+                <a href="#"><i class='bx bx-search-alt'></i></a>
+                <input type="text" placeholder="Search Games">
+            </div>
+        </div>
+        <div class="toggleMenu" onclick="toggleMenu();"></div>
+    </header>
+
     <div id="name">Snake Game</div>
     <div id="game-board" class="game-board"></div>
+
+    <!-- footer -->
+    <footer>
+        <div class="info">
+            <a href="#" class="logo">Dilly-Dallier</a>
+            <p><i class='bx bx-copyright'></i>2023 All Rights Reserved</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="#"><i class='bx bxl-youtube'></i></a></li>
+
+            </ul>
+        </div>
+    </footer>
     <script src="snake_js.js"></script>
+</body>
+
 </html>

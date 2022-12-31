@@ -127,3 +127,9 @@ $(document).ready(function() {	//detects this state of readiness be run lma el D
 		}
 	}	
 });
+
+
+function first(){
+    window.location.href = 'first.html';
+
+}

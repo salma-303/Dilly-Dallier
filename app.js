@@ -19,7 +19,6 @@ app.set('veiws engin','pug');
 //--------------------database
 const sql = require('mysql2');
 const argon=require("argon2");
-require("dotenv").config()
 var con = sql.createConnection({
     host: process.env.host,
     port: process.env.port,
@@ -27,13 +26,7 @@ var con = sql.createConnection({
     user:process.env.user,
     password:process.env.password
 });
-// var con = sql.createConnection({
-//     host: "cai.aast.edu",
-//     port: 3306,
-//     database:'web_12',
-//     user:"web_12",
-//     password:"9399"
-// });
+
 //------------------>code
 app.get('/',(req,res)=>{
     return res.redirect('first.html');
@@ -47,14 +40,14 @@ app.post('/regAction',(req,res)=>{
     var accept = req.body.accept;
     console.log(name);
     console.log("yarbbb");
-    if(name.trim()=="" || pass1.trim()=="" || pass2.trim()=="" || !accept){
+    if(!name.trim() || !pass1.trim() || !pass2.trim() || !accept){
         return res.redirect('first.html')
     }
     if(pass1!=pass2){
         return res.status(400).send({messge: "passwords are not the same"});
     }
-    console.log("befor err");
-    con.conect("INSERT INTO player (name,email) VALUES (?,?)",[name,email],
+    
+    con.query("INSERT INTO player (name,email) VALUES (?,?,?)",
         async (err,result)=>{
         if(err){
             console.log(err);
@@ -65,7 +58,7 @@ app.post('/regAction',(req,res)=>{
        const id = result.insertId;
        const hashpass = await argon.hash(pass1);
        const hashpas = await argon.hash(pass2);
-       con.conect("INSERT INTO auth (username,password) VALUES (?,?)",[name,hashpass], 
+       Pool.query("INSERT INTO auth (username,password) VALUES (?,?)",[name,hashpass], 
         (err,result2)=>{
             if(err){
                 console.log(err);
@@ -86,6 +79,9 @@ app.post('/loginAction',(req,res)=>{
     if(index>-1)  res.redirect('/profile.html');
     
 })
+
+// ==============================================================
+
+
 //------------------>
-const port = process.env.port;
-app.listen(3306,()=>{console.log('listening...')});
+app.listen(port,()=>{console.log('listening...')});
