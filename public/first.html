@@ -18,12 +18,12 @@
     <header>
         <a herf="#" class="logo">Dilly-Dallier</a>
         <ul class="nav">
-            <li><a herf="#">Home</a></li>
-            <li><a herf="#">Log in</a></li>
-            <li><a herf="#">Sign up</a></li>
-            <li><a herf="#">Games</a></li>
-            <li><a herf="#">About</a></li>
-            <li><a herf="#">Contact us</a></li>
+            <li><a herf="#home">Home</a></li>
+            <li><a herf="#login">Log in</a></li>
+            <li><a herf="#signup">Sign up</a></li>
+            <li><a herf="#games">Games</a></li>
+            <li><a herf="#about">About</a></li>
+            <li><a herf="#contact">Contact us</a></li>
         </ul>
         <div class="action">
             <div class="searchBx">
@@ -31,28 +31,30 @@
                 <input type="text" placeholder="Search Games">
             </div>
         </div>
-        <div class="toggleMenu"></div>
+        <div class="toggleMenu" onclick="toggleMenu();"></div>
     </header>
 
     <!--Home Banner-->
-    <div class="banner">
+    <div class="banner animeX" id="home">
         <div class="bg">
             <div class="content">
                 <h2>A New Home for<br>
-                every Dawdler 🎮</h2>
-                <p>Hi there!Welcome to the dawdlers Family! looking like you<br> have so many things to do but you choose to waste your time<br> and play some games... congratulation! you are at the right place.<br> oh and btw it's okay to waste time we are not<br>  a fucking working machine...</p>
-                <a herf="#"  class="btn">Lets Goo!</a>
+                    every Dawdler 🎮</h2>
+                <p>Hi there!Welcome to the dawdlers Family! looking like you<br> have so many things to do but you
+                    choose to waste your time<br> and play some games... congratulation! you are at the right place.<br>
+                    oh and btw it's okay to waste time we are not<br> a fucking working machine...</p>
+                <a herf="#" class="btn">Lets Goo!</a>
             </div>
             <img src="1.png">
         </div>
     </div>
-     <!-- logIn -->
-     <div class="container">
+    <!-- logIn -->
+    <div class="container animeX" id="login">
         <div class="forms">
             <div class="form login">
                 <span class="title">Login</span>
                 <!-- method='POST' action="loginAction" -->
-                <form method='POST' action="/loginAction">  
+                <form method='POST' action="/loginAction">
                     <div class="input-field">
                         <input type="text" placeholder="Enter your Email" name="email" required>
                         <i class="uil uil-envelope icon"></i>
@@ -68,7 +70,7 @@
                             <input type="checkbox" id="logCheck">
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
-                        
+
                         <a href="#" class="text">Forgot password?</a>
                     </div>
 
@@ -79,56 +81,134 @@
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="#" class="text signup-link">  Sign up Now</a>
+                        <a href="#" class="text signup-link"> Sign up Now</a>
                     </span>
                 </div>
-         </div>
-          <!-- Registration Form -->
-          <div class="form signup">
-            <span class="title">Registration</span>
+            </div>
+            <!-- Registration Form -->
+            <div class="form signup animeX" id="signup">
+                <span class="title">Registration</span>
 
-            <form method="POST" action="/regAction">
-                <div class="input-field">
-                    <input type="text" placeholder="Enter your name" required>
-                    <i class="uil uil-user"></i>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Enter your email" required>
-                    <i class="uil uil-envelope icon"></i>
-                </div>
-                <div class="input-field">
-                    <input type="password" class="password" placeholder="Create a password" required>
-                    <i class="uil uil-lock icon"></i>
-                </div>
-                <div class="input-field">
-                    <input type="password" class="password" placeholder="Confirm a password" required>
-                    <i class="uil uil-lock icon"></i>
-                    <i class="uil uil-eye-slash showHidePw"></i>
-                </div>
-
-                <div class="checkbox-text">
-                    <div class="checkbox-content">
-                        <input type="checkbox" id="termCon">
-                        <label for="termCon" class="text">I accepted all terms and conditions</label>
+                <form method="POST" action="/regAction">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
                     </div>
-                </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
 
-                <div class="input-field button">
-                    <input type="submit" value="Signup">
-                </div>
-            </form>
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                        </div>
+                    </div>
 
-            <div class="login-signup">
-                <span class="text">Already a member?
-                    <a href="#" class="text login-link">Login Now</a>
-                </span>
+                    <div class="input-field button">
+                        <input type="submit" value="Signup">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- Games -->
+    <div class="games animeX" id="games">
+        <h2>Games</h2>
+        <div class="cardBx">
+            <div class="card">
+                <img src="g1.png">
+                <div class="content">
+                    <h4>SUDOKU</h4>
+                    <div class="info">
+                        <a href="#" class="dashboard">Dash Board</a>
+                        <a href="#" class="play">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="g2.jpg">
+                <div class="content">
+                    <h4>SNAKE</h4>
+                    <div class="info">
+                        <a href="#" class="dashboard">Dash Board</a>
+                        <a href="#" class="play">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script src="script.js"></script>
 
-   
+    <!--About-->
+    <div class="about animeX" id="about">
+        <div class="contentBx">
+            <h2>About Us</h2>
+            <p>We are two ungraduate students at a college of artificial intelligence who decided to create this website
+                to collect various games into one place. We all waste a lot of time when we have too much to do, so
+                let's make the most of it by having some fun together.</p>
+            <a herf="#">Learn more</a>
+        </div>
+        <img src="5.png">
+    </div>
+
+    <!-- contact us -->
+    <div class="contact animeX" id="contact">
+        <img src="3.jpg">
+        <div class="form">
+            <h1>Contact Us</h1>
+            <div class="inputBx">
+                <p>Enter Name</p>
+                <input type="text" placeholder="Full Name">
+            </div>
+            <div class="inputBx">
+                <p>Enter Email</p>
+                <input type="text" placeholder="Valid Email">
+            </div>
+            <div class="inputBx">
+                <p>Message</p>
+                <textarea placeholder="Type here..."></textarea>
+            </div>
+            <div class="inputBx">
+                <input type="submit" name="Submit">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="info">
+            <a href="#" class="logo">Dilly-Dallier</a>
+            <p><i class='bx bx-copyright'></i>2023 All Rights Reserved</p>
+            <ul>
+                <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+                <li><a href="#"><i class='bx bxl-instagram' ></i></a></li>
+                <li><a href="#"><i class='bx bxl-twitter' ></i></a></li>
+                <li><a href="#"><i class='bx bxl-youtube' ></i></a></li>
+
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
 </body>
+
 </html>
