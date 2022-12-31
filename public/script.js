@@ -106,7 +106,7 @@ signUp.addEventListener("click", () => {
 login.addEventListener("click", () => {
     container.classList.remove("active");
 });
-//-----------------------------------------------
+
 // Sticky NavBar
 window.addEventListener('scroll', function () {
     var header = document.querySelector('header');
