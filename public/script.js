@@ -59,7 +59,6 @@ form.addEventListener("submit",(e)=>{
         errP.innerText = messages;
         e.preventDefault();  
     } 
-    e.preventDefault();
 });
 //-----------------------------------------
 //handle frontend validation login regester
@@ -90,12 +89,13 @@ form2.addEventListener("submit",(e)=>{
         errP2.innerText = messages;
         e.preventDefault();
     }
+    console.log("why")
     console.log(acc.value);
-    if(acc.value != 1){
-        messages='please check here';
-        errAccept.innerText = messages;
-        e.preventDefault();  
-    } 
+    // if(acc == undefined){
+    //     messages='please check here';
+    //     errAccept.innerText = messages;
+    //     e.preventDefault();  
+    // } 
 });
 //------------------------------------------------
 // js code to appear signup and login form
