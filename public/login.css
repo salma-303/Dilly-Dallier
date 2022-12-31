@@ -3,7 +3,7 @@
 
 .container{
     position: relative;
-    max-width: 430px;
+    max-width: 530px;
     width: 100%;
     /* background: rgba(255, 255, 255,0.1); */
     background-color: transparent;
@@ -15,25 +15,44 @@
     justify-content: center;
     margin-left: 100px;
     margin-top: -30px;
-    margin-bottom: 170px;
+    margin-bottom: 70px;
 }
 
 .container .forms{
     display: flex;
     align-items: center;
-    height: 440px;
+    height: 450px;
     width: 200%;
     transition: height 0.2s ease;
 }
 
-
+#errPass {
+    color:rgb(249, 4, 4);
+}
+#errEmail {
+    color:rgb(249, 4, 4);
+}
+#errName {
+    color:rgb(249, 4, 4);
+}
+#errAccept {
+    color:rgb(249, 4, 4);
+}
+#errP1 {
+    color:rgb(249, 4, 4);
+}
+#errP2 {
+    color:rgb(249, 4, 4);
+}
+#errE {
+    color:rgb(249, 4, 4);
+}
 .container .form{
     width: 50%;
     padding: 30px;
     /* background-color: rgba(255, 255, 255,0.1); */
     transition: margin-left 0.18s ease;
 }
-
 .container.active .login{
     margin-left: -50%;
     opacity: 0;
@@ -50,7 +69,7 @@
 }
 
 .container.active .forms{
-    height: 600px;
+    height: 700px;
 }
 .container .form .title{
     position: relative;

@@ -49,25 +49,33 @@
         </div>
     </div>
     <!-- logIn -->
-    <div class="container animeX" id="login">
+    <div class="container">
         <div class="forms">
             <div class="form login">
                 <span class="title">Login</span>
                 <!-- method='POST' action="loginAction" -->
-                <form method='POST' action="/loginAction">
+                <form method='POST' action="/loginAction" id="form">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your Email" name="email" required>
+                        <input type="email" placeholder="Enter your Email" name="email" id="email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
+                    <div id="errEmail">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" name="pass" required>
+                        <input type="password" class="password" placeholder="Enter your password" name="pass" id="pass" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div id="errPass">
+                        <i class="fas fa-check-circle click"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                     </div>
 
                     <div class="checkbox-text">
                         <div class="checkbox-content">
-                            <input type="checkbox" id="logCheck">
+                            <input type="checkbox" id="logCheck" name="remebreme" value="1">
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
 
@@ -86,34 +94,47 @@
                 </div>
             </div>
             <!-- Registration Form -->
-            <div class="form signup animeX" id="signup">
+            <div class="form signup">
                 <span class="title">Registration</span>
 
-                <form method="POST" action="/regAction">
+                <form method="POST" action="/regAction" id="form2">
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" placeholder="Enter your name" name="namereg"  id="name" required>
                         <i class="uil uil-user"></i>
                     </div>
+                    <div id="errName"></div>
+                    <!-- <div class="input-field">
+                    <input type="date" placeholder="Enter your birthday"  required>
+                    <i class="uil uil-calendar-alt"></i>
+                </div> -->
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="email" placeholder="Enter your email" name="emailreg" id="email1" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
+                    <div id="errE"></div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Create a password" required>
-                        <i class="uil uil-lock icon"></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        <input type="password" class="password" placeholder="Create a password" name="pass1" id="pass1" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
+                    <div id="errP1">
+                        <i class="fas fa-check-circle click"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirm a password" name="pass2" id="pass2" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div id="errP2"></div>
 
                     <div class="checkbox-text">
                         <div class="checkbox-content">
-                            <input type="checkbox" id="termCon">
+                            <input type="checkbox" id="termCon" name="accept" id="accept" value="1">
                             <label for="termCon" class="text">I accepted all terms and conditions</label>
                         </div>
                     </div>
+                    <div id="errAccept"></div>
 
                     <div class="input-field button">
                         <input type="submit" value="Signup">
@@ -128,6 +149,7 @@
             </div>
         </div>
     </div>
+
     <!-- Games -->
     <div class="games animeX" id="games">
         <h2>Games</h2>

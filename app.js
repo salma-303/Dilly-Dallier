@@ -16,10 +16,19 @@ const cookieParser = require('cookie-parser');
 //------------------>pug directory 
 app.set('Views',__dirname+'/views');
 app.set('veiws engin','pug'); 
+//--------------------database
+const sql = require('mysql2');
+const express = require("express");
+const argon=require("argon2");
+var con = sql.createConnection({
+    host: process.env.host,
+    port: process.env.port,
+    database:process.env.database,
+    user:process.env.user,
+    password:process.env.password
+});
 //------------------>load_data
-var users=[
-    {}
-]
+
 //------------------>code
 app.get('/',(req,res)=>{
     return res.redirect('first.html');
