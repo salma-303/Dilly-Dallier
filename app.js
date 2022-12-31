@@ -14,7 +14,7 @@ app.use(express.static(__dirname+'/public'));
 //------------------> keep track of user action using cookie parser
 const cookieParser = require('cookie-parser');
 //------------------>pug directory 
-app.set('Views',__dirname+'/views');
+app.set('views',__dirname+'/views');
 app.set('veiws engin','pug'); 
 //--------------------database
 const sql = require('mysql2');
