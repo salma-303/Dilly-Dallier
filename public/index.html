@@ -2,16 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>snake game</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="snake.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-
+    <title>Document</title>
 </head>
 
 <body>
@@ -34,11 +32,23 @@
         </div>
         <div class="toggleMenu" onclick="toggleMenu();"></div>
     </header>
-    <center>
-    <div id="name">Snake Game</div>
-    <div id="game-board" class="game-board"></div>
-    </center>
-    <!-- footer -->
+    <br>
+    <br>
+    <h1 class="score">SCORE: <span>00</span></h1>
+    <div class="board">
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+    </div>
+    <div class="cursor"></div>
+
+    <!-- Footer -->
     <footer>
         <div class="info">
             <a href="#" class="logo">Dilly-Dallier</a>
@@ -52,7 +62,9 @@
             </ul>
         </div>
     </footer>
-    <script src="snake_js.js"></script>
+
+    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
