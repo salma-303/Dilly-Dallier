@@ -19,12 +19,12 @@
     <header>
         <a href="#" class="logo">Dilly-Dallier</a>
         <ul class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#login">Log in</a></li>
-            <li><a href="#signup">Sign up</a></li>
-            <li><a href="#games">Games</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="#home" onclick="first()">Home</a></li>
+            <li><a href="#login" onclick="first()">Log in</a></li>
+            <li><a href="#signup" onclick="first()">Sign up</a></li>
+            <li><a href="#games" onclick="first()">Games</a></li>
+            <li><a href="#about" onclick="first()">About</a></li>
+            <li><a href="#contact" onclick="first()">Contact us</a></li>
         </ul>
         <div class="action">
             <div class="searchBx">
@@ -34,9 +34,12 @@
         </div>
         <div class="toggleMenu" onclick="toggleMenu();"></div>
     </header>
-
-    <div id="name">Snake Game</div>
-    <div id="game-board" class="game-board"></div>
+    <center>
+        <div id="name">Snake Game</div>
+        <h1 class="score">SCORE: <span>00</span></h1>
+    </center>
+    <center>
+        <div id="game-board" class="game-board"></div>
     </center>
     <!-- footer -->
     <footer id="footer">
