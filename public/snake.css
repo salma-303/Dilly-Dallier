@@ -17,16 +17,19 @@ body{
 
 #name{
     position: flex;
-    margin-top: 5%;
-    margin-left: 38%;
-    color: rgb(239, 217, 239);
-    font-size: 40px;
+	margin-top: 50px;
+	font-size: 3em;
+    color: #fff;
+    letter-spacing: 1px;
 }
+
+.score{
+	font-size: 2em;
+    color: #fff;
+}
+
 #game-board{
     position: flex;
-     margin-top: 3%;
-    margin-left: 30%; 
-
     background: rgb(148, 180, 31);
     width: 500px;
     height: 500px;

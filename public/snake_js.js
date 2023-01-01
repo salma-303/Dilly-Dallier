@@ -1,6 +1,8 @@
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById("game-board");
+const scoreEl = document.querySelector('.score span')
+let score = 0
 
 function main(currentTime) {
   if (gameOver) {
@@ -123,6 +125,7 @@ function addSegments() {
   }
 
   newSegments = 0;
+  
 }
 
 
@@ -133,6 +136,8 @@ function updateFood() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
     food = getRandomFoodPosition();
+    score += 1
+    scoreEl.textContent = score
   }
 }
 
@@ -168,7 +173,3 @@ function draw(){
 function checkDeath() {
    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
  }
- function first(){
-  window.location.href = 'first.html';
-
-}

@@ -148,3 +148,8 @@ function snake(){
     window.location.href = 'snake_game.html';
 
 }
+
+function whack(){
+    window.location.href = 'index.html';
+
+}
