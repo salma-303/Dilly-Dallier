@@ -70,8 +70,8 @@ app.post('/regAction',(req,res)=>{
                                 return;
                             }else{
                                 var token=jwt.sign({email:email},secret,{expiresIn:"1d"});
-                        res.cookie('TOKEN',token,{maxAge:10*10000});
-                        res.redirect('/profile');
+                                res.cookie('TOKEN',token,{maxAge:10*10000});
+                                res.end('hello');
                             }
                         });
 
@@ -84,25 +84,39 @@ app.post('/regAction',(req,res)=>{
 
 });
 //==============login
-app.post('/regAction',async (req,res)=>{
+app.post('/loginAction', (req,res)=>{
     var email = req.body.email;
     var pass = req.body.pass;
     console.log("yarabbbbbbbbbbb")
-    const hashpass = await argon.hash(pass);
     con.connect((err)=>{
         if(err){
             console.log('err',err.message);
         }else{
             console.log('connected');
-            const query="Select * From player , auth where `player`.`username` = (?) AND `auth`.username =`player`.username AND `auth`.password = (?) ";
-            con.query(query,[email,hashpass],
+            const query=`SELECT * FROM player , auth WHERE player.email = '${email}' AND auth.username = player.username`;
+            con.query(query,
                 async (err,result)=>{
                     if(err){
                         console.log("err",err.message);
+                        return res.end("email does not exsit")
                     }else{
-                        var token=jwt.sign({email:email},secret,{expiresIn:"1d"});
-                        res.cookie('TOKEN',token,{maxAge:10*100000});
-                        res.redirect('/profile');
+                        // var token=jwt.sign({email:email},secret,{expiresIn:"1d"});
+                        // res.cookie('TOKEN',token,{maxAge:10*100000});
+                        // res.end("welcom");
+                        console.log(result)
+    
+                        if(result.length==0){
+                            return res.end("email does not exsit")
+                        }else{
+                            if( await argon.verify( result[0].password,pass)){
+                                // res.end(result[0].email,result[0].username);
+                                res.end("welcom");
+                            }else{
+                                return  res.end("wrong passowrd");
+                            }
+                        }
+                        
+                        
                     }
                 }
             )

@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-*{
+/* *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body{
-    
+    position: flex;
     width: 100%;
     background: #050e2d;
     height: 100vh;
-    /* display:; */
     justify-content: center;
     align-items: center;
-}
+} */
+
 #name{
-    position: fixed;
+    position: flex;
     margin-top: 5%;
-    margin-left: 42%;
+    margin-left: 38%;
     color: rgb(239, 217, 239);
     font-size: 40px;
 }
 #game-board{
-    position: fixed;
-    margin-top: 10%;
-    margin-left: 30%;
+    position: flex;
+     margin-top: 3%;
+    margin-left: 30%; 
 
     background: rgb(148, 180, 31);
     width: 500px;
