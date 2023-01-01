@@ -159,15 +159,16 @@ app.post('/loginAction', (req, res) => {
 
 });
 //+++++++++++++++++++++
+var data;
 app.get('/profile', (req, res) => {
-    var cookies=req.cookies;
+    cookies=req.cookies;
     console.log("profile")
     console.log(!cookies)
     if(!cookies || !cookies.TOKEN || cookies.TOKEN==""){
         return res.redirect('first.html');
     }
     try{
-        var data = jwt.verify(cookies.TOKEN,secret);
+        data = jwt.verify(cookies.TOKEN,secret);
         const query = `SELECT * FROM player WHERE player.email = '${data.email}' AND player.username = '${data.username}'`;
         con.query(query,
             async (err, result) => {
@@ -191,9 +192,14 @@ app.get('/profile', (req, res) => {
     }
 })
 //----------------dashboard
+app.post("/waka",(req,res)=>{
+    var score = req.body.score;
+    console.log(score);
+})
 app.get("/games", (req, res) => {
-    res.render("games", { title: "Hey", message: "Hello there!" });
-  });
+    res.render("games", { title: data.username, message: data.email });
+});
+//----------------games score
 
 //--------------->initialize server
 app.listen(3306, () => { console.log('listening...') });
