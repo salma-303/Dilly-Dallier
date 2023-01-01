@@ -14,7 +14,7 @@ console.log("yarb1");
 router.post('/regAction',(req,res)=>{
     var name = req.body.name;
     var email = req.body.email;
-    var pass1 = req.body.pass1;
+    var pass1 = req. body.pass1;
     var pass2=req.body.pass2;
     var accept = req.body.accept;
     console.log(name);
@@ -26,7 +26,7 @@ router.post('/regAction',(req,res)=>{
         return res.status(400).send({messge: "passwords are not the same"});
     }
     
-    con.connect("INSERT INTO player (name,email) VALUES (?,?,?)",
+    con.query("INSERT INTO player (name,email) VALUES (?,?,?)",
         async (err,result)=>{
         if(err){
             console.log(err);
@@ -37,7 +37,7 @@ router.post('/regAction',(req,res)=>{
        const id = result.insertId;
        const hashpass = await argon.hash(pass1);
        const hashpas = await argon.hash(pass2);
-       con.connect("INSERT INTO auth (username,password) VALUES (?,?)",[name,hashpass], 
+       con.query("INSERT INTO auth (username,password) VALUES (?,?)",[name,hashpass], 
         (err,result2)=>{
             if(err){
                 console.log(err);

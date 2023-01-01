@@ -17,8 +17,8 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 //------------------>pug directory 
+app.set("view engine", "pug");
 app.set('Views', __dirname + '/views');
-app.set('veiws engin', 'pug');
 //--------------------database
 const sql = require('mysql2');
 const argon = require("argon2");
@@ -31,8 +31,8 @@ var con = sql.createConnection({
     password: "9399"
 });
 //---------------->code
-app.get('/', (req, res) => {
-    return res.redirect('first.html');
+app.get("/", (req, res) => {
+    return res.redirect('/first.html');
 })
 //===============register
 app.post('/regAction', (req, res) => {
@@ -142,7 +142,7 @@ app.post('/loginAction', (req, res) => {
                                             res.cookie('TOKEN', token, { maxAge: 10 * 10000 });
                                             console.log(result2)
                                             console.log(token)
-                                            res.redirect('/profile.html');
+                                            res.redirect('/profile');
                                         }
                                     })
                                 } else {
@@ -159,13 +159,13 @@ app.post('/loginAction', (req, res) => {
 
 });
 //+++++++++++++++++++++
-app.get('/profile/.html', (req, res) => {
+app.get('/profile', (req, res) => {
     var cookies=req.cookies;
     console.log("profile")
     console.log(!cookies)
     if(!cookies || !cookies.TOKEN || cookies.TOKEN==""){
         return res.redirect('first.html');
-     }
+    }
     try{
         var data = jwt.verify(cookies.TOKEN,secret);
         const query = `SELECT * FROM player WHERE player.email = '${data.email}' AND player.username = '${data.username}'`;
@@ -179,7 +179,7 @@ app.get('/profile/.html', (req, res) => {
                     console.log(result.length)
                     console.log("email does not exist")
                    }else{
-                      res.end('hello')
+                      res.end("welcome")
                    }
                 }
             })
@@ -189,8 +189,11 @@ app.get('/profile/.html', (req, res) => {
         }
         return res.end('invalid token');
     }
-    
 })
+//----------------dashboard
+app.get("/games", (req, res) => {
+    res.render("games", { title: "Hey", message: "Hello there!" });
+  });
 
 //--------------->initialize server
 app.listen(3306, () => { console.log('listening...') });
