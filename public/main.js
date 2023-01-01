@@ -1,10 +1,10 @@
 const cursor = document.querySelector('.cursor')
 const holes = [...document.querySelectorAll('.hole')]
 const scoreEl = document.querySelector('.score span')
+const endd = document.getElementById("end");
 let score = 0
-
+console.log(score);
 const sound = new Audio("assets/smash.mp3")
-
 function run(){
     const i = Math.floor(Math.random() * holes.length)
     const hole = holes[i]
