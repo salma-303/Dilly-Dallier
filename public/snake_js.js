@@ -168,3 +168,7 @@ function draw(){
 function checkDeath() {
    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
  }
+ function first(){
+  window.location.href = 'first.html';
+
+}
