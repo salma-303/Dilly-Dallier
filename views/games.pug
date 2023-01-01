@@ -1,5 +1,33 @@
+//- html
+//-   head
+//-     title= title
+//-   body
+//-     h1= message
+//- html
+//- head
+//-   title snake dashboard
+//- table.table.table-striped
+//-     tr
+//-       th user
+//-       th game
+//-       th score
+//-     each n in result
+//-    tr
+//-       td = n.username
+//-       td = n.game
+//-       td = n.score
 html
-  head
-    title= title
-  body
-    h1= message
+head
+  title Pug
+table
+  thead
+    tr
+      td user
+      td game
+      td score
+  tbody
+  each n in result
+    tr
+      td= n.username
+      td= n.game
+      td= n.score

@@ -192,12 +192,26 @@ app.get('/profile', (req, res) => {
     }
 })
 //----------------dashboard
-app.post("/waka",(req,res)=>{
-    var score = req.body.score;
-    console.log(score);
+app.post("/snake",(req,res)=>{
+    res.redirect("/games")
 })
 app.get("/games", (req, res) => {
-    res.render("games", { title: data.username, message: data.email });
+    const query = `SELECT * FROM games,scores,player WHERE  games.game_id=1 AND player.pid=scores.pid ORDER BY scores.score DESC `;
+        con.query(query,
+            async (err, result) => {
+                if (err) {
+                    console.log("err", err.message);
+                } else {
+                   if(result.length==0){ 
+                     res.redirect("/first.html")
+                    console.log(result.length)
+                    console.log("no players")
+                   }else{
+                    console.log(result);
+                    res.render('games', {result:result});
+                   }
+                }
+            })
 });
 //----------------games score
 
