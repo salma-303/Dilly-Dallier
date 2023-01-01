@@ -26,7 +26,7 @@
         </ul>
         <div class="action">
             <div class="searchBx">
-                <a href="#"><i class='bx bx-search-alt'></i></a>
+         *       <a href="#"><i class='bx bx-search-alt'></i></a>
                 <input type="text" placeholder="Search Games">
             </div>
         </div>
@@ -34,7 +34,8 @@
     </header>
     <br>
     <br>
-    <h1 class="score">SCORE: <span>00</span></h1>
+    <form action="/waka" method="POST">
+    <h1 class="score">SCORE: <span name ="score">00</span></h1>
     <div class="board">
         <div class="hole"></div>
         <div class="hole"></div>
@@ -47,7 +48,10 @@
         <div class="hole"></div>
     </div>
     <div class="cursor"></div>
-
+    <div >
+        <input type="submit" id="end" value="end" >
+    </div>
+    </form>
     <!-- Footer -->
     <footer>
         <div class="info">

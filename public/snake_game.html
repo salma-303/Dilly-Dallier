@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>snake game</title>
     <meta charset="UTF-8">
@@ -35,8 +34,10 @@
         <div class="toggleMenu" onclick="toggleMenu();"></div>
     </header>
     <center>
-        <div id="name">Snake Game</div>
-        <h1 class="score">SCORE: <span>00</span></h1>
+        <form action="/snake" method="POST" name="form">
+            <div id="name">Snake Game</div>
+            <h1 class="score">SCORE: <span name="score">00</span></h1>
+        </form>
     </center>
     <center>
         <div id="game-board" class="game-board"></div>
