@@ -1,8 +1,94 @@
-<html>
-    <head>
-        <title>profile</title>
-    </head>
-    <body>
-        <p>Welcome</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS User Profile Card</title>
+	<link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="style.css">
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Dilly-Dallier</a>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#login">Log in</a></li>
+            <li><a href="#signup">Sign up</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+        <div class="action">
+            <div class="searchBx">
+                <a href="#"><i class='bx bx-search-alt'></i></a>
+                <input type="text" placeholder="Search Games">
+            </div>
+        </div>
+        <div class="toggleMenu" onclick="toggleMenu();"></div>
+    </header>
+
+
+<div class="wrapper">
+    <div class="left">
+        <img src="p1.jpg" 
+        alt="user" width="100">
+        <h4>Alex William</h4>
+         <p>UI Developer</p>
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>Information</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Email</h4>
+                    <p>alex@gmail.com</p>
+                 </div>
+                 <div class="data">
+                   <h4>Phone</h4>
+                    <p>0001-213-998761</p>
+              </div>
+            </div>
+        </div>
+      
+      <div class="projects">
+            <h3>Projects</h3>
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>Recent</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                 </div>
+                 <div class="data">
+                   <h4>Most Viewed</h4>
+                    <p>dolor sit amet.</p>
+              </div>
+            </div>
+        </div>
+      
+        <div class="social_media">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+      </div>
+    </div>
+</div>
+
+<footer>
+    <div class="info">
+        <a href="#" class="logo">Dilly-Dallier</a>
+        <p><i class='bx bx-copyright'></i>2023 All Rights Reserved</p>
+        <ul>
+            <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram' ></i></a></li>
+            <li><a href="#"><i class='bx bxl-twitter' ></i></a></li>
+            <li><a href="#"><i class='bx bxl-youtube' ></i></a></li>
+
+        </ul>
+    </div>
+</footer>
+
+</body>
 </html>
