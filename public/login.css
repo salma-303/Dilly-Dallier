@@ -21,9 +21,10 @@
 .container .forms{
     display: flex;
     align-items: center;
-    height: 450px;
+    height: 600px;
     width: 200%;
     transition: height 0.2s ease;
+
 }
 
 #errPass {
@@ -54,10 +55,12 @@
     transition: margin-left 0.18s ease;
 }
 .container.active .login{
+   
     margin-left: -50%;
     opacity: 0;
     transition: margin-left 0.18s ease, opacity 0.15s ease;
 }
+
 
 .container .signup{
     opacity: 0;
@@ -69,8 +72,9 @@
 }
 
 .container.active .forms{
-    height: 700px;
+    height: 800px;
 }
+
 .container .form .title{
     position: relative;
     font-size: 45px;

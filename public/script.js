@@ -7,11 +7,11 @@ const container = document.querySelector(".container"),
     pass = document.getElementById("pass");
     form = document.getElementById("form");
     foem2 =document.getElementById("form2");
-    errE=document.getElementById("errEmail");
-    errP=document.getElementById("errPass");
-    errEm=document.getElementById("errE");
-    errP1=document.getElementById("errP1");
-    errP2=document.getElementById("errP2");
+    errE= document.getElementById("errEmail");
+    errP= document.getElementById("errPass");
+    errEm= document.getElementById("errE");
+    errP1= document.getElementById("errP1");
+    errP2= document.getElementById("errP2");
     namme = document.getElementById("name");
     email1 = document.getElementById("email1");
     pass1 = document.getElementById("pass1");
@@ -90,7 +90,7 @@ form2.addEventListener("submit",(e)=>{
         e.preventDefault();
     }
     console.log("why")
-    console.log(acc.value);
+    //console.log(acc.value);
     // if(acc == undefined){
     //     messages='please check here';
     //     errAccept.innerText = messages;
